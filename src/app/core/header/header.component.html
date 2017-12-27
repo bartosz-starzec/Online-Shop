@@ -1,3 +1,27 @@
-<p>
-  header works!
-</p>
+<nav class="menu">
+  <ul [ngClass]="calculateState(true)">
+    <section class="left">
+      <li class="current-item"><a >Strona główna</a></li>
+      <li><a >Koszule męskie</a></li>
+      <li><a >Koszule damskie</a></li>
+    </section>
+
+
+    <section class="right">
+      <li><a >Profil</a>
+        <ul class="dropbox">
+          <li><a >Koszyk</a></li>
+          <li><a >Historia zamówień</a></li>
+          <li><a >Wyloguj</a></li>
+        </ul>
+      </li>
+      <li><a >Zaloguj</a></li>
+      <li class="last-item"><a >Zarejestruj</a></li>
+    </section>
+
+  </ul>
+  <a class="toggle-nav"
+     (click)="toggleState()"
+     [ngClass]="calculateState()">&#9776;</a>
+
+</nav>
