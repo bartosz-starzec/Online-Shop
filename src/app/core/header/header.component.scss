@@ -1,18 +1,32 @@
-* {
-  box-sizing: border-box;
-}
 
 /*-- Toggle button --*/
 .toggle-nav {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  padding: 0px 25px 20px 0px;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+  color: #fefaff;
+  transition: color linear 0.15s;
+  cursor: pointer;
+  &:hover {
+    color: #cae2be;
+  }
+}
+
+.fa {
+  color: #cae2be;
+  margin-right: 10px;
+}
+
 /*-- Menu --*/
 
 @media screen and (min-width: 860px) {
   .menu {
-    width: 100%;
-    padding: 10px 18px;
+    //width: 100%;
+    padding: 1px 18px 1px;
     box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
     background: #353737;
     position: relative;
@@ -24,31 +38,39 @@
     display: flex;
     justify-content: space-between;
   }
-
   li {
-    padding: 0px 25px 0px 0px;
     margin-right: 25px;
     float: left;
     list-style: none;
     font-size: 17px;
-    border-right: 1px dashed #9BB291;
     position: relative;
+    &:after {
+      content: '';
+      width: 1px;
+      height: 35px;
+      background-color: #cae2be;
+      right: 0;
+      position: absolute;
+      display: block;
+      top: -10px;
+    }
     &:last-child {
-      border-right: none;
+      &:after {
+        width: 0;
+      }
     }
     ul {
       &.dropbox {
         display: none;
         width: 130px;
         position: absolute;
-        top:60px;
+        top:43px;
         left: -30px;
         padding: 10px 18px;
         box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
         border-radius: 3px;
         background:#353737;
         z-index: 100;
-        //text-align: center;
 
         &.active {
           display: none;
@@ -65,69 +87,59 @@
           border-right: 7px solid transparent;
           border-bottom: 7px solid #303030;
         }
+        li {
+          margin: 10px 0px;
+          padding: 10px 0px;
+          float: none;
+          display: block;
+          border-right: none;
+          span {
+            margin-left: 25px;
+          }
+          &:after {
+            content: '';
+            width: 130px;
+            height: 1px;
+            background-color: #cae2be;
+            position: absolute;
+            display: block;
+            top:45px;
+          }
+          &:nth-child(2) {
+            &:after {
+              top: 60px;
+            }
+          }
+        }
+        a {
+          display: block;
+          padding: 0px;
 
-
-      li {
-        margin: 10px 0px;
-        padding: 10px 0px;
-        float: none;
-        display: block;
-        border-right: none;
-        border-bottom: 1px dashed #9BB291;
-        &:last-child {
-          border-bottom: none;
         }
       }
-
-      a {
-        display: block;
-      }
-      }
-
     }
     &:hover {
       ul {
-
         display: block;
       }
     }
-  }
-
-  a {
-    text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
-    color: #A6A2A7;
-    transition: color linear 0.15s;
-    cursor: pointer;
-    &:hover {
-      color: #ff321e;
-    }
-  }
-
-  img {
-    position: absolute;
-    height: 75px;
-    right: 0px;
-    top: 0px;
   }
 
   @media screen and (max-width: 1150px) {
     position: relative;
     display: inline-block;
     width: 90vw;
-
-
     ul {
       display: inline-block;
       width: 150px;
       position: absolute;
-      top:70px;
+      top:65px;
       left: 10px;
-      padding: 10px 18px;
+      padding: 10px 18px 0px;
       box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
       border-radius: 3px;
       background:#353737;
       z-index: 100;
-
       &.active {
         display: none;
       }
@@ -151,9 +163,20 @@
       float: none;
       display: block;
       border-right: none;
-      border-bottom: 1px dashed #9BB291;
+      &:after {
+        content: '';
+        width: 160px;
+        height: 1px;
+        background-color: #cae2be;
+        position: absolute;
+        display: block;
+        top:45px;
+        left: -5px;
+      }
       &.last-item {
-        border-bottom: none;
+        &:after {
+          width: 160px;
+        }
       }
       &:hover {
         ul {
@@ -164,24 +187,8 @@
 
     a {
       display: block;
+      padding: 0;
     }
-
-    .photo {
-      width: 150px;
-      height: 63px;
-      margin-top: 3px;
-      margin-top: 3px;
-      float: right;
-      display: block;
-
-      img {
-        position: static;
-        height: 63px;
-        width: 150px;
-        border-radius: 1px;
-      }
-    }
-
 
     .toggle-nav {
       padding: 20px;
@@ -192,7 +199,7 @@
       border-radius: 3px;
       background: #031926;
       text-shadow: 0px 1px 0px rgba(0,0,0,0.15);
-      color: #D33F49;
+      color: #cae2be;
       font-size: 20px;
       &:hover, &.active {
         text-decoration: none;

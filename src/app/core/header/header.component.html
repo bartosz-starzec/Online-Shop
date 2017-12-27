@@ -1,27 +1,29 @@
-<nav class="menu">
-  <ul [ngClass]="calculateState(true)">
-    <section class="left">
-      <li class="current-item"><a >Strona główna</a></li>
-      <li><a >Koszule męskie</a></li>
-      <li><a >Koszule damskie</a></li>
-    </section>
+<section class="container">
+  <nav class="menu">
+    <ul [ngClass]="calculateState(true)">
+      <section class="left">
+        <li ><a routerLink="/"><i class="fa fa-home" aria-hidden="true"></i>Strona główna</a></li>
+        <li><a routerLink="/products/mens-shirt"><i class="fa fa-male" aria-hidden="true"></i>Koszule męskie</a></li>
+        <li class="last-item"><a routerLink="/products/womens-shirt"><i class="fa fa-female" aria-hidden="true"></i>Koszule damskie</a></li>
+      </section>
 
 
-    <section class="right">
-      <li><a >Profil</a>
-        <ul class="dropbox">
-          <li><a >Koszyk</a></li>
-          <li><a >Historia zamówień</a></li>
-          <li><a >Wyloguj</a></li>
-        </ul>
-      </li>
-      <li><a >Zaloguj</a></li>
-      <li class="last-item"><a >Zarejestruj</a></li>
-    </section>
+      <section class="right">
+        <li class="profile"><a routerLink="/user-panel"> <i class="fa fa-user" aria-hidden="true"></i>Profil</a>
+          <ul class="dropbox">
+            <li><a routerLink="/user-panel/basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Mój koszyk</a></li>
+            <li><a routerLink="/user-panel/history"><i class="fa fa-history" aria-hidden="true"></i>Historia <span>zamówień</span></a></li>
+            <li><a ><i class="fa fa-sign-out" aria-hidden="true"></i>Wyloguj</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/signup"><i class="fa fa-sign-in" aria-hidden="true"></i>Zaloguj</a></li>
+        <li ><a routerLink="/signin"><i class="fa fa-plus" aria-hidden="true"></i>Zarejestruj</a></li>
+      </section>
 
-  </ul>
-  <a class="toggle-nav"
-     (click)="toggleState()"
-     [ngClass]="calculateState()">&#9776;</a>
+    </ul>
+    <a class="toggle-nav"
+       (click)="toggleState()"
+       [ngClass]="calculateState()">&#9776;</a>
+  </nav>
 
-</nav>
+</section>
