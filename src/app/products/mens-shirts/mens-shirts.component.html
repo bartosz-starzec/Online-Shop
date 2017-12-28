@@ -1,3 +1,8 @@
-<p>
-  mens-shirts works!
-</p>
+<div class="container">
+  <h1>Koszule męskie</h1>
+  <div class="content">
+    <app-shirt-item *ngFor="let shirt of shirts; let i = index"
+      [myShirt]="shirt">
+    </app-shirt-item>
+  </div>
+</div>

@@ -6,6 +6,7 @@ import {DetailComponent} from './detail/detail.component';
 import {SellerComponent} from './seller/seller.component';
 import {CommonModule} from '@angular/common';
 import {ProductsRoutingModule} from './products-routing.module';
+import { ShirtItemComponent } from './mens-shirts/shirt-item/shirt-item.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {ProductsRoutingModule} from './products-routing.module';
     MensShirtsComponent,
     WomensShirtsComponent,
     DetailComponent,
-    SellerComponent
+    SellerComponent,
+    ShirtItemComponent,
   ],
   imports: [
     CommonModule,

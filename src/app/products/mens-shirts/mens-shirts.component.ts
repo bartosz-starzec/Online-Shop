@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Shirt} from '../shirt.model';
+import {ShirtsService} from '../shirts.service';
 
 @Component({
   selector: 'app-mens-shirts',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mens-shirts.component.scss']
 })
 export class MensShirtsComponent implements OnInit {
+  shirts: Shirt[];
 
-  constructor() { }
+  constructor(private shirtsService: ShirtsService) { }
 
   ngOnInit() {
+    this.shirts = this.shirtsService.getShirts();
   }
 
 }

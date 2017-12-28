@@ -3,6 +3,7 @@ import {HeaderComponent} from './header/header.component';
 import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from '../app-routing.module';
 import {CommonModule} from '@angular/common';
+import {ShirtsService} from '../products/shirts.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,9 @@ import {CommonModule} from '@angular/common';
   exports: [
     AppRoutingModule,
     HeaderComponent
+  ],
+  providers: [
+    ShirtsService
   ]
 
 

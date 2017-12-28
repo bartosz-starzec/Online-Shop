@@ -21,6 +21,8 @@ a {
   margin-right: 10px;
 }
 
+
+
 /*-- Menu --*/
 
 @media screen and (min-width: 860px) {
@@ -30,10 +32,40 @@ a {
     box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
     background: #353737;
     position: relative;
+    li {
+      &.first-item {
+        display: none;
+      }
+      &.starting-element {
+        padding-left: 25px;
+        margin-left: 50px;
+        &:before {
+          content: '';
+          width: 1px;
+          height: 35px;
+          background-color: #cae2be;
+          left: 0;
+          position: absolute;
+          display: block;
+          top: -10px;
+        }
+      }
+    }
+  }
+  section {
+    &.logo {
+      position: absolute;
+      left: 18px;
+      top: 7px;
+      img {
+        height: 35px;
+      }
+    }
   }
 }
 
 .menu {
+
   ul {
     display: flex;
     justify-content: space-between;
@@ -54,6 +86,7 @@ a {
       display: block;
       top: -10px;
     }
+
     &:last-child {
       &:after {
         width: 0;
@@ -173,6 +206,9 @@ a {
         top:45px;
         left: -5px;
       }
+      &.first-item {
+        display: inline-block;
+      }
       &.last-item {
         &:after {
           width: 160px;
@@ -189,21 +225,38 @@ a {
       display: block;
       padding: 0;
     }
+    .mobile-header {
+      display: flex;
+      .toggle-nav {
+        //display: inline-block;
+        padding: 20px;
+        //position: absolute;
+        //left: 10px;
+        //top: 3px;
+        width: 25px;
+        height: 25px;
+        margin: 10px 0 0 10px;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+        border-radius: 3px;
+        background: #031926;
+        text-shadow: 0px 1px 0px rgba(0,0,0,0.15);
+        color: #cae2be;
+        font-size: 20px;
+        &:hover, &.active {
+          text-decoration: none;
+        }
+      }
+      section {
+        &.logo {
+          width: 150px;
+          height: 25px;
+          text-align: center;
+          margin: 10px auto 0;
+        }
 
-    .toggle-nav {
-      padding: 20px;
-      position: absolute;
-      left: 20px;
-      top: 3px;
-      box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
-      border-radius: 3px;
-      background: #031926;
-      text-shadow: 0px 1px 0px rgba(0,0,0,0.15);
-      color: #cae2be;
-      font-size: 20px;
-      &:hover, &.active {
-        text-decoration: none;
       }
     }
+
+
   }
 }

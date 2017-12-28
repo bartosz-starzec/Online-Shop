@@ -2,9 +2,9 @@
   <nav class="menu">
     <ul [ngClass]="calculateState(true)">
       <section class="left">
-        <li ><a routerLink="/"><i class="fa fa-home" aria-hidden="true"></i>Strona główna</a></li>
-        <li><a routerLink="/products/mens-shirt"><i class="fa fa-male" aria-hidden="true"></i>Koszule męskie</a></li>
-        <li class="last-item"><a routerLink="/products/womens-shirt"><i class="fa fa-female" aria-hidden="true"></i>Koszule damskie</a></li>
+        <li class="first-item"><a routerLink="/"><i class="fa fa-home" aria-hidden="true"></i>Strona główna</a></li>
+        <li class="starting-element"><a routerLink="/products/mens-shirts" ><i class="fa fa-male" aria-hidden="true"></i>Koszule męskie</a></li>
+        <li class="last-item"><a routerLink="/products/womens-shirts"><i class="fa fa-female" aria-hidden="true"></i>Koszule damskie</a></li>
       </section>
 
 
@@ -21,9 +21,20 @@
       </section>
 
     </ul>
-    <a class="toggle-nav"
-       (click)="toggleState()"
-       [ngClass]="calculateState()">&#9776;</a>
+    <section class="mobile-header">
+      <a class="toggle-nav"
+         (click)="toggleState()"
+         [ngClass]="calculateState()">&#9776;
+      </a>
+
+      <section class="logo">
+        <a routerLink="/">
+          <img src="../../../assets/1_Primary_logo_on_transparent_167x71.png" alt="">
+        </a>
+      </section>
+    </section>
+
+
   </nav>
 
 </section>
