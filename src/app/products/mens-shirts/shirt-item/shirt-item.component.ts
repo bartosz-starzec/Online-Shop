@@ -8,6 +8,8 @@ import {Shirt} from '../../shirt.model';
 })
 export class ShirtItemComponent implements OnInit {
   @Input() myShirt: Shirt;
+  @Input() id: number;
+
   constructor() { }
 
   ngOnInit() {

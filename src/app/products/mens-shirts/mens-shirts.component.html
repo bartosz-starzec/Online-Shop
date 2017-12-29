@@ -2,7 +2,8 @@
   <h1>Koszule męskie</h1>
   <div class="content">
     <app-shirt-item *ngFor="let shirt of shirts; let i = index"
-      [myShirt]="shirt">
+      [myShirt]="shirt"
+      [id]="i">
     </app-shirt-item>
   </div>
 </div>

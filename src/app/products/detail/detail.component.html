@@ -1,3 +1,22 @@
-<p>
-  detail works!
-</p>
+<section class="container">
+  <section class="product-view">
+    <img [src]="shirt.imagePath" alt="">
+  </section>
+  <section class="product-info">
+    <img src="../../../assets/1_Primary_logo_on_transparent_167x71.png" alt="">
+    <h3>{{ shirt.name }}</h3>
+    <p>{{ shirt.price }} zł</p>
+    <label for="size">Rozmiar: </label>
+    <select name="size" id="size" >
+      <option value="choose">--Wybierz--</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XXL">XXL</option>
+    </select>
+    <button> Dodaj do koszyka </button>
+    <a class="product-describtion"> Zobacz opis <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+    <p><i class="fa fa-check" aria-hidden="true"></i> Darmowa dostawa od 250zł </p>
+  </section>
+  <section> </section>
+</section>

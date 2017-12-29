@@ -143,6 +143,11 @@ a {
               top: 60px;
             }
           }
+          &:last-child {
+            &:after {
+              height: 0;
+            }
+          }
         }
         a {
           display: block;
@@ -164,7 +169,7 @@ a {
     width: 90vw;
     ul {
       display: inline-block;
-      width: 150px;
+      width: 160px;
       position: absolute;
       top:65px;
       left: 10px;
