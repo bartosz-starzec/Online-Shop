@@ -11,6 +11,7 @@ import {ShirtsService} from '../shirts.service';
 export class DetailComponent implements OnInit {
   shirt: Shirt;
   id: number;
+  feature = 'about';
   constructor(private route: ActivatedRoute,
               private shirtsService: ShirtsService) { }
 
@@ -21,6 +22,16 @@ export class DetailComponent implements OnInit {
         this.shirt = this.shirtsService.getShirt(this.id);
       }
     );
+  }
+
+  toggleFeature(e, feature: string) {
+    if (this.feature !== feature) {
+      this.feature = feature;
+    }
+  }
+
+  aboutProduct() {
+    const about = document.getElementById('about').scrollIntoView({behavior: 'smooth'});
   }
 
 }
