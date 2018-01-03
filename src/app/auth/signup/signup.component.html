@@ -1,3 +1,40 @@
-<p>
-  signup works!
-</p>
+<div class="container">
+  <h1>Zaloguj się już teraz!</h1>
+  <h3>To zajmie tylko moment!</h3>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <section class="email">
+      <label for="email">
+        <span>Email:</span>
+        <input type="text"
+               id="email"
+               name="email"
+               ngModel #email="ngModel"
+               required email>
+        <div class="help" *ngIf="!email.valid && email.touched">
+          <p>
+            Wprowadź poprawny adres email
+          </p>
+
+        </div>
+      </label>
+    </section>
+    <section class="password">
+      <label for="password">
+        <span>Password:</span>
+        <input type="password"
+               id="password"
+               name="password"
+               ngModel
+               #password="ngModel" 
+               required>
+        <div class="help" *ngIf="!password.valid && password.touched">
+          <p>
+            Wprowadź hasło
+          </p>
+        </div>
+      </label>
+    </section>
+    <button type="submit" class="register" [disabled]="!f.valid">Zarejestruj</button>
+  </form>
+
+</div>
