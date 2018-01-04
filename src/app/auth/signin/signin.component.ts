@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {AuthService} from '../auth.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-signin',
@@ -7,13 +9,17 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-  @ViewChild('f') signinForm: NgForm;
 
-  constructor() { }
+  constructor(private authService: AuthService, private location: Location) { }
 
   ngOnInit() {}
 
-  onSubmit() {
-    console.log(this.signinForm);
+  onSubmit(form: NgForm) {
+    const email = form.value.email;
+    const password = form.value.password;
+    this.authService.signInUser(email, password);
+    this.location.back();
   }
+
+
 }

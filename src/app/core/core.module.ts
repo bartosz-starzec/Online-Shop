@@ -4,6 +4,7 @@ import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from '../app-routing.module';
 import {CommonModule} from '@angular/common';
 import {ShirtsService} from '../products/shirts.service';
+import {AuthService} from '../auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ShirtsService} from '../products/shirts.service';
     HeaderComponent
   ],
   providers: [
-    ShirtsService
+    ShirtsService,
+    AuthService
   ]
 
 

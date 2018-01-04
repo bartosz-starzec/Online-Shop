@@ -1,11 +1,28 @@
 <div class="container">
-  <h1>Zaloguj się już teraz!</h1>
+  <h1>Zarejestruj się już teraz!</h1>
   <h3>To zajmie tylko moment!</h3>
-  <form (ngSubmit)="onSubmit()" #f="ngForm">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <section class="username">
+      <label for="username">
+        <span>Username:</span>
+        <input type="text"
+               id="username"
+               autocomplete="username"
+               name="username"
+               ngModel
+               #username="ngModel" required>
+        <div class="help" *ngIf="!username.valid && username.touched">
+          <p>
+            Wprowadź nazwę użytkownika
+          </p>
+        </div>
+      </label>
+    </section>
     <section class="email">
       <label for="email">
         <span>Email:</span>
         <input type="text"
+               autocomplete="email"
                id="email"
                name="email"
                ngModel #email="ngModel"
@@ -24,8 +41,9 @@
         <input type="password"
                id="password"
                name="password"
+               autocomplete="password"
                ngModel
-               #password="ngModel" 
+               #password="ngModel"
                required>
         <div class="help" *ngIf="!password.valid && password.touched">
           <p>

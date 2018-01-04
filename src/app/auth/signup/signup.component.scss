@@ -1,0 +1,87 @@
+.container {
+  width: 60vw;
+  margin: 20vh auto;
+  background-color: #e1dde2;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  -webkit-box-shadow: -12px 21px 98px -26px rgba(0,0,0,1);
+  -moz-box-shadow: -12px 21px 98px -26px rgba(0,0,0,1);
+  box-shadow: -12px 21px 98px -26px rgba(0,0,0,1);
+  @media screen and (max-width: 800px) {
+    width: 95vw;
+  }
+}
+h3 {
+  padding-bottom: 30px;
+}
+.username, .email, .password {
+  display: block;
+  margin: 0 auto 60px;
+  @media screen and (max-width: 800px) {
+    margin: 0 auto 40px;
+  }
+}
+label {
+  span {
+    display: inline-block;
+    width: 150px;
+    @media screen and (max-width: 800px) {
+      padding-bottom: 5px;
+    }
+  }
+  input {
+    width: 450px;
+    display: inline-block;
+    padding: 7px 0 7px 7px;
+    font-size: 0.9em;
+    font-weight: normal;
+    border: none;
+    &.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+  .help {
+    font-size: 18px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 35px auto 0;
+    text-align: left;
+    color: red;
+    @media screen and (max-width: 800px) {
+      font-size: 0.8em;
+      margin: 0 auto 0;
+      text-align: center;
+    }
+    p {
+      margin: 0 auto;
+      width: 300px;
+    }
+  }
+}
+
+.register {
+  width: 150px;
+  height: 50px;
+  border: 0;
+  background-color: #282828;
+  color: #ffffff;
+  &:hover {
+    cursor: pointer;
+    background-color: #424242;
+  }
+}
+
+.register:disabled,
+.register[disabled] {
+  cursor: not-allowed;
+  background-color: #464347;
+}
+
+
+
