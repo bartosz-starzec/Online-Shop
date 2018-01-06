@@ -13,11 +13,11 @@
           <ul class="dropbox">
             <li><a routerLink="/user-panel/basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Mój koszyk</a></li>
             <li><a routerLink="/user-panel/history"><i class="fa fa-history" aria-hidden="true"></i>Historia <span>zamówień</span></a></li>
-            <li><a style="cursor: pointer" (click)="onLogout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Wyloguj</a></li>
           </ul>
         </li>
-        <li><a routerLink="/signin"><i class="fa fa-sign-in" aria-hidden="true"></i>Zaloguj</a></li>
-        <li ><a routerLink="/signup"><i class="fa fa-plus" aria-hidden="true"></i>Zarejestruj</a></li>
+        <li *ngIf="this.authService.isAuth()"><a style="cursor: pointer" (click)="onLogout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Wyloguj</a></li>
+        <li *ngIf="!this.authService.isAuth()"><a routerLink="/signin"><i class="fa fa-sign-in" aria-hidden="true"></i>Zaloguj</a></li>
+        <li *ngIf="!this.authService.isAuth()"><a routerLink="/signup"><i class="fa fa-plus" aria-hidden="true"></i>Zarejestruj</a></li>
       </section>
 
     </ul>

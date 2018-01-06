@@ -1,3 +1,26 @@
-<p>
-  Hello
-</p>
+<div class="container">
+  <h1>NewFashion</h1>
+  <section class="header">
+    <h3>Koszule męskie</h3>
+  </section>
+  <section class="mens-shirts">
+    <ng-container class="mens" *ngFor="let shirt of shirts; let i=index">
+      <a *ngIf="i<4" [routerLink]="['products/mens-shirts', i]">
+        <section class="shirt">
+          <img  [src]="shirt.imagePath">
+          <div class="shirt-describtion">
+            <h4>
+              {{ shirt.name }}
+            </h4>
+            <p>
+              {{ shirt.price }} zł
+            </p>
+          </div>
+        </section>
+      </a>
+    </ng-container>
+  </section>
+
+</div>
+
+
