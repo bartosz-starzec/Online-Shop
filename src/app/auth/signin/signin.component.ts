@@ -9,6 +9,7 @@ import {Location} from '@angular/common';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
+  @ViewChild('f') slForm: NgForm;
 
   constructor(private authService: AuthService, private location: Location) { }
 
@@ -18,8 +19,6 @@ export class SigninComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.authService.signInUser(email, password);
-    this.location.back();
   }
-
 
 }

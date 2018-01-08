@@ -6,9 +6,11 @@ import {MensShirtsComponent} from './mens-shirts/mens-shirts.component';
 import {WomensShirtsComponent} from './womens-shirts/womens-shirts.component';
 import {DetailComponent} from './detail/detail.component';
 import {SellerComponent} from './seller/seller.component';
+import {ProductsListComponent} from './products-list/products-list.component';
 
 const productsRoutes: Routes = [
   { path: '', component: ProductsComponent, children: [
+      { path: '', component: ProductsListComponent },
       { path: 'mens-shirts', component: MensShirtsComponent },
       { path: 'womens-shirts', component: WomensShirtsComponent },
       { path: 'mens-shirts/:id', component: DetailComponent },

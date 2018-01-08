@@ -39,13 +39,13 @@ h3 {
     margin: 0 auto;
     text-align: center;
   }
-    a {
-      position: relative;
-      width: 200px;
-      &:hover {
-        transform: scale(1.4);
-      }
+  a {
+    position: relative;
+    width: 200px;
+    &:hover {
+      transform: scale(1.4);
     }
+  }
 }
 
 img {

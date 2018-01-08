@@ -10,11 +10,10 @@
                name="email"
                ngModel #email="ngModel"
                required email>
-        <div class="help" *ngIf="!email.valid && email.touched">
+        <div class="input-help" *ngIf="!email.valid && email.touched">
           <p>
             Wprowadź poprawny adres email
           </p>
-
         </div>
       </label>
     </section>
@@ -27,7 +26,7 @@
                ngModel
                #password="ngModel"
                required>
-        <div class="help" *ngIf="!password.valid && password.touched">
+        <div class="input-help" *ngIf="!password.valid && password.touched">
           <p>
             Wprowadź hasło
           </p>

@@ -41,12 +41,12 @@
     margin-top: 20px;
     margin-right: 20px;
   }
-  .size-select {
+  .product-info__size-select {
     width: 200px;
     font-size: 0.8em;
   }
 
-  .addToBasket {
+  .product-info__btn--addToBasket {
     width: 180px;
     height: 60px;
     margin: 50px 30px 30px 0;
@@ -59,12 +59,12 @@
       background-color: #353737;
     }
   }
-  .product-describtion {
+  .product-info__btn--describtion {
     display: inline-block;
     color: black;
     background: transparent;
     border: 0;
-    text-decorationgn: none;
+    text-decoration: none;
     cursor: pointer;
   }
 }
@@ -73,7 +73,7 @@
   width: 95vw;
   margin: 20px auto;
   height: 300px;
-  .product-about-menu {
+  .product-about__menu {
     ul {
       padding: 0;
       li {
@@ -89,11 +89,11 @@
 
     }
   }
-  .about, .details {
+  .product-specification, .product-details {
     padding: 10px 5px 0;
   }
 
-  .details {
+  .product-details {
     ul {
       padding: 0 5px;
       margin: 0;

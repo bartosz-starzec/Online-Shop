@@ -27,39 +27,38 @@ a {
 
 @media screen and (min-width: 1150px) {
   .menu {
-    //width: 100%;
     padding: 1px 18px 1px;
     box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
     background: #353737;
     position: relative;
-    li {
-      &.first-item {
+    .menu__item {
+      &.menu__item-mobile {
         display: none;
       }
-      &.starting-element {
-        padding-left: 25px;
-        margin-left: 50px;
-        &:before {
-          content: '';
-          width: 1px;
-          height: 35px;
-          background-color: #cae2be;
-          left: 0;
-          position: absolute;
-          display: block;
-          top: -10px;
-        }
+    }
+    .menu__item--first {
+      padding-left: 25px;
+      margin-left: 50px;
+      &:before {
+        content: '';
+        width: 1px;
+        height: 35px;
+        background-color: #cae2be;
+        left: 0;
+        position: absolute;
+        display: block;
+        top: -10px;
       }
     }
   }
-    &.logo {
-      position: absolute;
-      left: 18px;
-      top: 7px;
+  .logo {
+    position: absolute;
+    left: 18px;
+    top: 7px;
       img {
         height: 35px;
       }
-    }
+  }
 }
 
 .menu {
@@ -68,7 +67,7 @@ a {
     display: flex;
     justify-content: space-between;
   }
-  li {
+  .menu__item {
     margin-right: 25px;
     float: left;
     list-style: none;
@@ -118,7 +117,7 @@ a {
           border-right: 7px solid transparent;
           border-bottom: 7px solid #303030;
         }
-        li {
+        .menu__item {
           margin: 10px 0px;
           padding: 10px 0px;
           float: none;
@@ -193,7 +192,7 @@ a {
       }
     }
 
-    li {
+    .menu__item {
       margin: 10px 0px;
       padding: 10px 0px;
       float: none;
@@ -209,10 +208,10 @@ a {
         top:45px;
         left: -5px;
       }
-      &.first-item {
+      &:first-child {
         display: inline-block;
       }
-      &.last-item {
+      &.menu__item--no-border {
         &:after {
           width: 160px;
         }
@@ -231,17 +230,11 @@ a {
     .mobile-header {
       display: flex;
       .toggle-nav {
-        //display: inline-block;
         padding: 20px;
-        //position: absolute;
-        //left: 10px;
-        //top: 3px;
-        width: 25px;
-        height: 25px;
         margin: 10px 0 0 10px;
         box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
         border-radius: 3px;
-        background: #031926;
+        background: #353737;
         text-shadow: 0px 1px 0px rgba(0,0,0,0.15);
         color: #cae2be;
         font-size: 20px;
@@ -256,10 +249,7 @@ a {
           text-align: center;
           margin: 10px auto 0;
         }
-
       }
     }
-
-
   }
 }

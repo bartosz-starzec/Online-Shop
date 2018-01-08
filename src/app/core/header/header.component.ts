@@ -1,5 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../auth/auth.service';
+import { NavigationEnd, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,17 @@ import {AuthService} from '../../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
   classState = false;
-  constructor(public authService: AuthService) {}
+  params;
+  constructor(public authService: AuthService, private router: Router) {
+    router.events.subscribe((val) => {
+      if(this.params !== this.router.url) {
+        if (this.classState) {
+          this.toggleState();
+        }
+      }
+      this.params = this.router.url;
+    });
+  }
 
   ngOnInit() {
   }

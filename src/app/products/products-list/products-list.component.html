@@ -6,7 +6,7 @@
   </section>
   <section class="mens-shirts">
     <ng-container class="mens" *ngFor="let shirt of shirts; let i=index">
-      <a *ngIf="i<4" [routerLink]="['products/mens-shirts', i]">
+      <a *ngIf="i<4" [routerLink]="['mens-shirts', i]">
         <section class="shirt">
           <img  [src]="shirt.imagePath">
           <div class="shirt-describtion">
@@ -21,7 +21,6 @@
       </a>
     </ng-container>
   </section>
-
 </div>
 
 
