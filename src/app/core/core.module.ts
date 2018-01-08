@@ -5,6 +5,7 @@ import {AppRoutingModule} from '../app-routing.module';
 import {CommonModule} from '@angular/common';
 import {ShirtsService} from '../products/shirts.service';
 import {AuthService} from '../auth/auth.service';
+import {DataStorageService} from '../shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {AuthService} from '../auth/auth.service';
   ],
   providers: [
     ShirtsService,
-    AuthService
+    AuthService,
+    DataStorageService
   ]
 
 

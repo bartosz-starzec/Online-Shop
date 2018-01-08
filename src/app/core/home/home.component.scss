@@ -27,11 +27,11 @@ h3 {
 }
 
 .mens-shirts {
-
   width: 95%;
   margin: 20px auto 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   overflow: hidden;
   .shirt-describtion {

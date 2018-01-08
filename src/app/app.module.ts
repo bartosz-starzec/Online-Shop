@@ -6,6 +6,7 @@ import { ErrorComponent } from './error/error.component';
 import {CoreModule} from './core/core.module';
 import {AuthModule} from './auth/auth.module';
 import {ErrorRoutingModule} from './error/error-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {ErrorRoutingModule} from './error/error-routing.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AuthModule,
     CoreModule,
     ErrorRoutingModule
