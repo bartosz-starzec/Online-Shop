@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import {ShirtsService} from '../products/shirts.service';
 import {AuthService} from '../auth/auth.service';
 import {DataStorageService} from '../shared/data-storage.service';
+import {UserPanelService} from '../user-panel/user-panel.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {DataStorageService} from '../shared/data-storage.service';
   providers: [
     ShirtsService,
     AuthService,
-    DataStorageService
+    DataStorageService,
+    UserPanelService
   ]
 
 

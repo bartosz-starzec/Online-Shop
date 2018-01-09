@@ -6,15 +6,17 @@
   <section class="basket">
     <section class="grid-template basket__header">
       <div class="basket__header__element"></div>
-      <div class="basket__header__element">Produkt</div>
+      <div class="basket__header__element">Produkt:</div>
       <div class="basket__header__element">Cena z VAT</div>
       <div class="basket__header__element">Ilość</div>
       <div class="basket__header__element">Cena razem</div>
     </section>
-    <section *ngFor="let bas of basket" class="grid-template basket__product">
-      <div class="basket__product__item basket__product__img"></div>
-      <div class="basket__product__item basket__product__info"></div>
-      <div class="basket__product__item basket__product__price--single"></div>
+    <section *ngFor="let product of products" class="grid-template basket__product">
+      <div class="basket__product__item basket__product__img">
+        <img [src]="product.imagePath" alt="">
+      </div>
+      <div class="basket__product__item basket__product__info">{{ product.name }}</div>
+      <div class="basket__product__item basket__product__price--single">{{ product.price }}</div>
       <div class="basket__product__item basket__product__amount"></div>
       <div class="basket__product__item basket__product__price--sum"></div>
     </section>

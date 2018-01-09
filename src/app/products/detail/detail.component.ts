@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Shirt} from '../shirt.model';
 import {ShirtsService} from '../shirts.service';
+import {UserPanelService} from '../../user-panel/user-panel.service';
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,9 @@ export class DetailComponent implements OnInit {
   id: number;
   feature = 'about';
   constructor(private route: ActivatedRoute,
-              private shirtsService: ShirtsService) { }
+              private shirtsService: ShirtsService,
+              private userPanelService: UserPanelService,
+              private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -22,6 +25,12 @@ export class DetailComponent implements OnInit {
         this.shirt = this.shirtsService.getShirt(this.id);
       }
     );
+  }
+
+  toBasket() {
+    this.userPanelService.toBasket(this.shirt);
+    this.router.navigate(['/user-panel/basket']);
+
   }
 
   toggleFeature(e, feature: string) {

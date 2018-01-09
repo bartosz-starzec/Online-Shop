@@ -31,6 +31,17 @@
   }
   .basket__product {
     grid-template-rows: 120px;
+    .basket__product__item {
+      line-height: 120px;
+    }
+    .basket__product__img {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      img {
+        width: 60px;
+      }
+    }
   }
 
   .basket__header, .basket__product, .basket__total-value {
