@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../auth/auth.service';
 import { NavigationEnd, Params, Router} from '@angular/router';
+import {DataStorageService} from '../../shared/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import { NavigationEnd, Params, Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   classState = false;
   params;
-  constructor(public authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, private router: Router,
+              private data: DataStorageService) {
     router.events.subscribe((val) => {
       if(this.params !== this.router.url) {
         if (this.classState) {
@@ -19,6 +21,7 @@ export class HeaderComponent implements OnInit {
       }
       this.params = this.router.url;
     });
+    this.data.importShirts();
   }
 
   ngOnInit() {

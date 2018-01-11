@@ -2,7 +2,7 @@
   <h1>NewFashion</h1>
   <section class="header">
     <h3>Koszule męskie</h3>
-    <button (click)="saveShirt()">Save</button>
+    <button *ngIf="this.auth.isAuth()" (click)="saveShirt()">Save</button>
   </section>
   <section class="mens-shirts">
     <ng-container class="mens" *ngFor="let shirt of shirts; let i=index">

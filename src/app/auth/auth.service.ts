@@ -18,7 +18,8 @@ export class AuthService {
           const token = firebase.auth().currentUser.uid;
           firebase.database().ref('users/' + token).set({
             username: username,
-            email: email
+            email: email,
+            role: 'User'
           });
         }
       )

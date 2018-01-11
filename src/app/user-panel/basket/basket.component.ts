@@ -9,14 +9,14 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./basket.component.scss']
 })
 export class BasketComponent implements OnInit, OnDestroy {
-  products: Shirt[] = [];
   private subscription: Subscription;
+  products: Shirt[];
   constructor(private userPanelService: UserPanelService) { }
 
   ngOnInit() {
     this.subscription = this.userPanelService.shirtChanged
       .subscribe(
-        (shirts: Shirt[]) => {
+        (shirts) => {
           this.products = shirts;
         }
       );
