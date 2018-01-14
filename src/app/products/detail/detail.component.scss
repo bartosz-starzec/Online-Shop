@@ -1,10 +1,21 @@
 .container {
-  margin: 50px auto 0;
+  margin: 20px auto 0;
   padding: 20px 0;
   display: flex;
+  width: 100%;
+  overflow: hidden;
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: #e1dde2;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    //background-color: #fff;
+  }
+}
+
+img {
+  max-width:100%;
+  max-height:100%;
 }
 
 .active {
@@ -20,36 +31,48 @@
 }
 
 .product-view {
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
   width: 50vw;
   background-color: #ffffff;
   text-align: center;
-  img {
+  .product-info__img {
     width: 550px;
     margin: 0 auto;
   }
 }
 
 .product-info {
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0 10px;
+  }
   width: 35vw;
   padding: 30px;
   background-color: #ffffff;
-  img {
+  .product-info__img {
     margin-bottom: 30px;
   }
-  .size-label {
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 20px;
+  .product-info__size {
+    .size-label {
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+    .product-info__size-select {
+      width: 200px;
+      font-size: 0.8em;
+    }
   }
-  .product-info__size-select {
-    width: 200px;
-    font-size: 0.8em;
-  }
+
 
   .product-info__btn--addToBasket {
     width: 180px;
     height: 60px;
-    margin: 50px 30px 30px 0;
+    margin: 30px 30px 10px 0;
     background-color: #000;
     color: #ffffff;
     border: none;
@@ -58,12 +81,18 @@
       cursor: pointer;
       background-color: #353737;
     }
+    @media screen and (max-width: 900px) {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
   }
   .product-info__btn--describtion {
     display: inline-block;
     color: black;
     background: transparent;
     border: 0;
+    margin-bottom: 30px;
     text-decoration: none;
     cursor: pointer;
   }
@@ -75,6 +104,7 @@
   height: 300px;
   .product-about__menu {
     ul {
+      display: flex;
       padding: 0;
       li {
         cursor: pointer;

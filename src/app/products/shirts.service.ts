@@ -9,8 +9,6 @@ export class ShirtsService {
   shirtsChan = new Subject<Shirt[]>();
   private shirts: Shirt[];
 
-
-
   setShirts(shirts: Shirt[]) {
     this.shirts = shirts;
     this.shirtsChan.next(this.shirts.slice());

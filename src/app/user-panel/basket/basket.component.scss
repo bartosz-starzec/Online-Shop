@@ -1,6 +1,7 @@
 .container {
   margin: 80px auto 0;
   padding: 15px;
+  box-sizing: border-box;
 }
 
 .title {
@@ -42,6 +43,36 @@
         width: 60px;
       }
     }
+    .basket__product__amount {
+      .prod__amount {
+        position: relative;
+        width: 53px;
+        height: 120px;
+        .prod_amount__input {
+          width: 40px;
+          padding: 5px;
+
+        }
+
+        .prod_amount__incrase, .prod_amount__decrase {
+          cursor: pointer;
+          position: absolute;
+          right: 3px;
+        }
+
+        .prod_amount__incrase {
+          top: 38%;
+        }
+        .prod_amount__decrase {
+          bottom: 36%;
+        }
+      }
+    }
+  }
+
+  .prod__price {
+    margin: 0;
+    padding: 0;
   }
 
   .basket__header, .basket__product, .basket__total-value {

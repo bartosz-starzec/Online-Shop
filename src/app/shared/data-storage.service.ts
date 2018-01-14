@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 
 import {Shirt} from '../products/shirt.model';
@@ -8,41 +8,36 @@ import * as firebase from 'firebase';
 import {UserPanelService} from '../user-panel/user-panel.service';
 
 @Injectable()
-export class DataStorageService implements OnInit{
+export class DataStorageService {
   shirts: Shirt[];
+  basket: Shirt[];
 
   constructor(private httpClient: HttpClient, private shirtsService: ShirtsService,
-              private authService: AuthService) {
-  }
-
-  ngOnInit() {
-
+              private authService: AuthService,
+              private userPanel: UserPanelService) {
   }
 
   importBasket() {
-    if (this.authService.isAuth()) {
+      const token = this.authService.getToken();
       const uid = firebase.auth().currentUser.uid;
-      this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/basket/' + uid + '.json')
+      this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/basket/' + uid + '/name.json',
+        {params: new HttpParams().set('auth', token)})
         .subscribe(
-          (shirts: Shirt[]) => {
-            
-          }
-        );
-    }
+        (shirts: any) => {
+            console.log(shirts);
+        }
+      );
   }
 
-  saveBasket(products: Shirt[]) {
-
+  saveBasket(products: Shirt[], name: string) {
     if (this.authService.isAuth()) {
       const token = this.authService.getToken();
       const uid = firebase.auth().currentUser.uid;
-      const req = this.httpClient.put('https://online-shop-815e7.firebaseio.com/basket/' + uid + '.json', products, {
+      const req = this.httpClient.put('https://online-shop-815e7.firebaseio.com/basket/' + uid + '/' + name + '.json', products, {
         observe: 'body',
           params: new HttpParams().set('auth', token)
       })
         .subscribe();
-      console.log(products);
-      console.log('done');
     }
   }
 

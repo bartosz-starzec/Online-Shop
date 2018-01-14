@@ -3,6 +3,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Shirt} from '../shirt.model';
 import {ShirtsService} from '../shirts.service';
 import {UserPanelService} from '../../user-panel/user-panel.service';
+import {DataStorageService} from '../../shared/data-storage.service';
 
 @Component({
   selector: 'app-detail',
@@ -16,9 +17,13 @@ export class DetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private shirtsService: ShirtsService,
               private userPanelService: UserPanelService,
-              private router: Router) { }
+              private router: Router,
+              private dataStorage: DataStorageService) {
+    this.dataStorage.importShirts();
+  }
 
   ngOnInit() {
+
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
@@ -29,8 +34,12 @@ export class DetailComponent implements OnInit {
 
   toBasket() {
     this.userPanelService.toBasket(this.shirt);
-    this.router.navigate(['/user-panel/basket']);
+    // this.router.navigate(['/user-panel/basket']);
+  }
 
+  goToBasket() {
+    // this.dataStorage.importBasket();
+    this.router.navigate(['/user-panel/basket']);
   }
 
   toggleFeature(e, feature: string) {

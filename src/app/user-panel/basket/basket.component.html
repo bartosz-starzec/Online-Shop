@@ -3,6 +3,11 @@
   <section class="sale"><i class="fa fa-info" aria-hidden="true"></i> SALE do -70%</section>
   <section class="sale"><i class="fa fa-info" aria-hidden="true"></i> SALE do -70%</section>
   <section class="sale"><i class="fa fa-info" aria-hidden="true"></i> SALE do -70%</section>
+  <section class="saved">
+    <p>Zapisane koszyki:</p>
+    <!--<div *ngFor="let bas of saved">{{  }}</div>-->
+  </section>
+  <input type="text"><button (click)="saveBasket('name')">Save</button>
   <section class="basket">
     <section class="grid-template basket__header">
       <div class="basket__header__element"></div>
@@ -15,10 +20,20 @@
       <div class="basket__product__item basket__product__img">
         <img [src]="product.imagePath" alt="">
       </div>
-      <div class="basket__product__item basket__product__info">{{ product.name }}</div>
-      <div class="basket__product__item basket__product__price--single">{{ product.price }}</div>
-      <div class="basket__product__item basket__product__amount"></div>
-      <div class="basket__product__item basket__product__price--sum"></div>
+      <div class="basket__product__item basket__product__info">
+        {{ product.name }}
+      </div>
+      <div class="basket__product__item basket__product__price--single">
+        <p class="prod__price">{{ product.price }} </p>
+      </div>
+      <div class="basket__product__item basket__product__amount">
+        <div class="prod__amount">
+          <input #amount class="prod_amount__input" type="text" name="amount" value="1">
+          <i class="fa fa-angle-up prod_amount__incrase" aria-hidden="true" (click)="increaseAmount()"></i>
+          <i class="fa fa-angle-down prod_amount__decrase" aria-hidden="true" (click)="decreaseAmount()"></i>
+        </div>
+      </div>
+      <div class="suma" class="basket__product__item basket__product__price--sum">{{ price }}</div>
     </section>
     <section class="basket__total-value">
       <p><i class="fa fa-info" aria-hidden="true"></i> Nie zwlekaj z zakupem, dodanie produktów do koszyka nie oznacza ich rezerwacji</p>

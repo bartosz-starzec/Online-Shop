@@ -3,18 +3,22 @@
     <img [src]="shirt.imagePath" alt="">
   </section>
   <section class="product-info">
-    <img src="../../../assets/1_Primary_logo_on_transparent_167x71.png" alt="">
+    <img class="product-info__img" src="../../../assets/1_Primary_logo_on_transparent_167x71.png" alt="">
     <h3>{{ shirt.name }}</h3>
     <p>{{ shirt.price }} zł</p>
-    <label for="size" class="size-label">Rozmiar: </label>
-    <select name="size" id="size" class="product-info__size-select" >
-      <option value="choose">--Wybierz--</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XXL">XXL</option>
-    </select>
+    <div class="product-info__size">
+      <label for="size" class="size-label">Rozmiar: </label>
+      <select name="size" id="size" class="product-info__size-select" >
+        <option value="choose">--Wybierz--</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XXL">XXL</option>
+      </select>
+    </div>
+
     <button class="product-info__btn--addToBasket" (click)="toBasket()"> Dodaj do koszyka </button>
+    <!--<button class="product-info__btn&#45;&#45;addToBasket" (click)="goToBasket()">Koszyk</button>-->
     <button class="product-info__btn--describtion" (click)="aboutProduct()"> Zobacz opis <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
     <p><i class="fa fa-check" aria-hidden="true"></i> Darmowa dostawa od 250zł </p>
   </section>
