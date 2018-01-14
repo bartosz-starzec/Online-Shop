@@ -1,5 +1,7 @@
 <h1> Online shop </h1>
 
+(Stil in progress)
+
 Proejct created with:
 
 - Angular 4
@@ -7,4 +9,5 @@ Proejct created with:
 - SCss
 - Firebase
 
-Web Application, which simulate shop created with Angular 4 & Firebase. App allow „buying” items only with created account, when user is logged in. Shop has also Admin panel which allows to add/delete products and manage users.
+Web Application, which simulates a shop created with Angular 4 & Firebase. 
+App allows „buying” items only with created account, when user is logged in.
