@@ -7,7 +7,20 @@ export class ShirtsService {
 
   }
   shirtsChan = new Subject<Shirt[]>();
-  private shirts: Shirt[];
+  private shirts: Shirt[] = [
+    new Shirt('Zwykła koszula', 31, 'https://vistula.pl/product_picture/fit_in_1800x2400/20eb94a4b0480764b63eaed36fb99f83.jpg',
+      ' Koszula męska Milan w linii Vistula z białej tkaniny w bordowe kropki.\n' +
+      '      Wykonana z wysokiej jakości egipskiej bawełny.\n' +
+      '      Mankiet zapinany na guziki, z możliwością regulacji (dwa guziki, jedna dziurka).\n' +
+      '      Kołnierz typu button-down, na plecach zaszewki.\n' +
+      '      Koszula dobrze dopasowana do sylwetki doda stylizacji szyku.', 'Asortyment: koszula \n' +
+      '          Marka: Vistula\n' +
+      '          Skład materiału: 100% egipska bawełna\n' +
+      '          Sylwetka: super slim\n' +
+      '          Rękaw: długi\n' +
+      '          Mankiet: zapinany na guzik\n' +
+      '          Kołnierz: button-down')
+  ];
 
   setShirts(shirts: Shirt[]) {
     this.shirts = shirts;

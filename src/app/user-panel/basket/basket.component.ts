@@ -21,9 +21,9 @@ export class BasketComponent implements OnInit, OnDestroy {
               private auth: AuthService) { }
 
   ngOnInit() {
-    if (this.auth.isAuth()) {
-      this.dataStorage.importBasket();
-    }
+    // if (this.auth.isAuth()) {
+    //   this.dataStorage.importBasket();
+    // }
     this.subscription = this.userPanelService.shirtChanged
       .subscribe(
         (shirts: Shirt[]) => {
@@ -31,7 +31,6 @@ export class BasketComponent implements OnInit, OnDestroy {
         }
       );
     this.products = this.userPanelService.getBasket();
-
   }
 
   increaseAmount() {

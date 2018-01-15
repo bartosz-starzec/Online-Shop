@@ -7,15 +7,11 @@
         <li class="menu__item menu__item--no-border"><a routerLink="/products/womens-shirts"><i class="fa fa-female" aria-hidden="true"></i>Koszule damskie</a></li>
       </section>
       <section class="right">
-        <li *ngIf="this.authService.isAuth()" class="menu__item profile"><a routerLink="/user-panel"> <i class="fa fa-user" aria-hidden="true"></i>Profil</a>
-          <ul class="dropbox">
-            <li class="menu__item"><a routerLink="/user-panel/basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Mój koszyk</a></li>
-            <li class="menu__item"><a routerLink="/user-panel/history"><i class="fa fa-history" aria-hidden="true"></i>Historia <span>zamówień</span></a></li>
-          </ul>
-        </li>
-        <li class="menu__item" *ngIf="this.authService.isAuth()"><a style="cursor: pointer" (click)="onLogout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Wyloguj</a></li>
-        <li class="menu__item" *ngIf="!this.authService.isAuth()"><a routerLink="/signin"><i class="fa fa-sign-in" aria-hidden="true"></i>Zaloguj</a></li>
-        <li class="menu__item" *ngIf="!this.authService.isAuth()"><a routerLink="/signup"><i class="fa fa-plus" aria-hidden="true"></i>Zarejestruj</a></li>
+        <li  class="menu__item"><a routerLink="/user-panel/basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Mój koszyk</a></li>
+        <li *ngIf="this.authService.isAuth()" class="menu__item menu__item--history"><a routerLink="/user-panel/history"><i class="fa fa-history" aria-hidden="true"></i>Historia <span>zamówień</span></a></li>
+        <li *ngIf="this.authService.isAuth()" class="menu__item"><a style="cursor: pointer" (click)="onLogout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Wyloguj</a></li>
+        <li *ngIf="!this.authService.isAuth()" class="menu__item"><a routerLink="/signin"><i class="fa fa-sign-in" aria-hidden="true"></i>Zaloguj</a></li>
+        <li *ngIf="!this.authService.isAuth()" class="menu__item"><a routerLink="/signup"><i class="fa fa-plus" aria-hidden="true"></i>Zarejestruj</a></li>
       </section>
     </ul>
     <section class="mobile-header">

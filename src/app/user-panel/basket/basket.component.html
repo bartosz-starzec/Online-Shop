@@ -7,8 +7,8 @@
     <p>Zapisane koszyki:</p>
     <!--<div *ngFor="let bas of saved">{{  }}</div>-->
   </section>
-  <input type="text"><button (click)="saveBasket('name')">Save</button>
-  <section class="basket">
+  <input type="text" class="input__name-of-basket"><button class="btn__save-basket" (click)="saveBasket('name')">Zapisz koszyk</button>
+  <section *ngIf="this.products != 0" class="basket">
     <section class="grid-template basket__header">
       <div class="basket__header__element"></div>
       <div class="basket__header__element">Produkt:</div>
@@ -24,7 +24,7 @@
         {{ product.name }}
       </div>
       <div class="basket__product__item basket__product__price--single">
-        <p class="prod__price">{{ product.price }} </p>
+        <p class="prod__price">{{ product.price }} zł </p>
       </div>
       <div class="basket__product__item basket__product__amount">
         <div class="prod__amount">

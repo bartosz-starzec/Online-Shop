@@ -18,7 +18,7 @@
     </div>
 
     <button class="product-info__btn--addToBasket" (click)="toBasket()"> Dodaj do koszyka </button>
-    <!--<button class="product-info__btn&#45;&#45;addToBasket" (click)="goToBasket()">Koszyk</button>-->
+    <button class="product-info__btn--addToBasket" (click)="goToBasket()">Koszyk</button>
     <button class="product-info__btn--describtion" (click)="aboutProduct()"> Zobacz opis <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
     <p><i class="fa fa-check" aria-hidden="true"></i> Darmowa dostawa od 250zł </p>
   </section>
@@ -42,23 +42,21 @@
       *ngIf="feature === 'about'; else details"
       class="product-specification"
     >
-      Koszula męska Milan w linii Vistula z białej tkaniny w bordowe kropki.
-      Wykonana z wysokiej jakości egipskiej bawełny.
-      Mankiet zapinany na guziki, z możliwością regulacji (dwa guziki, jedna dziurka).
-      Kołnierz typu button-down, na plecach zaszewki.
-      Koszula dobrze dopasowana do sylwetki doda stylizacji szyku.
+      {{ shirt.specifications }}
     </p>
     <ng-template #details>
       <article class="product-details">
-        <ul>
-          <li>Asortyment: koszula </li>
-          <li>Marka: Vistula</li>
-          <li>Skład materiału: 100% egipska bawełna</li>
-          <li>Sylwetka: super slim</li>
-          <li>Rękaw: długi</li>
-          <li>Mankiet: zapinany na guzik</li>
-          <li>Kołnierz: button-down</li>
-        </ul>
+        <!--<ul>-->
+          <!--<li>Asortyment: koszula </li>-->
+          <!--<li>Marka: Vistula</li>-->
+          <!--<li>Skład materiału: 100% egipska bawełna</li>-->
+          <!--<li>Sylwetka: super slim</li>-->
+          <!--<li>Rękaw: długi</li>-->
+          <!--<li>Mankiet: zapinany na guzik</li>-->
+          <!--<li>Kołnierz: button-down</li>-->
+        <!--</ul>-->
+
+        {{ shirt.details }}
       </article>
     </ng-template>
 

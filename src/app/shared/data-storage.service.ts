@@ -43,7 +43,7 @@ export class DataStorageService {
 
   storeShirts() {
     const token = this.authService.getToken();
-    console.log('lala');
+    console.log(this.shirtsService.getShirts());
     const req = this.httpClient.put('https://online-shop-815e7.firebaseio.com/shirts.json',
       this.shirtsService.getShirts(), {
       observe: 'body',
@@ -59,11 +59,11 @@ export class DataStorageService {
   }
 
   importShirts() {
-    this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/shirts.json')
-      .subscribe(
-        (shirts: Shirt[]) => {
-          this.shirtsService.setShirts(shirts);
-        }
-      );
+    // this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/shirts.json')
+    //   .subscribe(
+    //     (shirts: Shirt[]) => {
+    //       this.shirtsService.setShirts(shirts);
+    //     }
+    //   );
   }
 }

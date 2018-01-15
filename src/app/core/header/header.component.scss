@@ -15,15 +15,10 @@ a {
     color: #cae2be;
   }
 }
-
 .fa {
   color: #cae2be;
   margin-right: 10px;
 }
-
-
-
-/*-- Menu --*/
 
 @media screen and (min-width: 1150px) {
   .menu {
@@ -55,14 +50,15 @@ a {
     position: absolute;
     left: 18px;
     top: 7px;
-      img {
-        height: 35px;
-      }
+    img {
+      height: 35px;
+    }
   }
 }
 
-.menu {
+/*-- Menu --*/
 
+.menu {
   ul {
     display: flex;
     justify-content: space-between;
@@ -73,6 +69,10 @@ a {
     list-style: none;
     font-size: 17px;
     position: relative;
+    span {
+      margin-left: 25px;
+    }
+
     &:after {
       content: '';
       width: 1px;
@@ -83,82 +83,14 @@ a {
       display: block;
       top: -10px;
     }
-
     &:last-child {
       &:after {
         width: 0;
       }
     }
-    ul {
-      &.dropbox {
-        display: none;
-        width: 130px;
-        position: absolute;
-        top:43px;
-        left: -50px;
-        padding: 10px 18px;
-        box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
-        border-radius: 3px;
-        background:#353737;
-        z-index: 100;
-
-        &.active {
-          display: none;
-        }
-        &:after {
-          width: 0px;
-          height: 0px;
-          position: absolute;
-          top: 0%;
-          left: 32px;
-          content: '';
-          transform: translate(0%, -100%);
-          border-left: 7px solid transparent;
-          border-right: 7px solid transparent;
-          border-bottom: 7px solid #303030;
-        }
-        .menu__item {
-          margin: 10px 0px;
-          padding: 10px 0px;
-          float: none;
-          display: block;
-          border-right: none;
-          span {
-            margin-left: 25px;
-          }
-          &:after {
-            content: '';
-            width: 130px;
-            height: 1px;
-            background-color: #cae2be;
-            position: absolute;
-            display: block;
-            top:45px;
-          }
-          &:nth-child(2) {
-            &:after {
-              top: 60px;
-            }
-          }
-          &:last-child {
-            &:after {
-              height: 0;
-            }
-          }
-        }
-        a {
-          display: block;
-          padding: 0px;
-
-        }
-      }
-    }
-    &:hover {
-      ul {
-        display: block;
-      }
-    }
   }
+
+
 
   @media screen and (max-width: 1150px) {
     position: relative;
@@ -220,6 +152,12 @@ a {
         ul {
           display: none;
         }
+      }
+    }
+
+    .menu__item--history {
+      &:after {
+        top:65px;
       }
     }
 
