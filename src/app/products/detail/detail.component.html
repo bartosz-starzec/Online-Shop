@@ -7,9 +7,9 @@
     <h3>{{ shirt.name }}</h3>
     <p>{{ shirt.price }} zł</p>
     <div class="product-info__size">
-      <label for="size" class="size-label">Rozmiar: </label>
-      <select name="size" id="size" class="product-info__size-select" >
-        <option value="choose">--Wybierz--</option>
+      <label for="size" class="size-label"><p class="size-label__header">Rozmiar:</p> </label>
+      <select #selectSize name="size" id="size" class="product-info__size-select">
+        <option value="choose" selected>--Wybierz--</option>
         <option value="S">S</option>
         <option value="M">M</option>
         <option value="L">L</option>
@@ -46,15 +46,6 @@
     </p>
     <ng-template #details>
       <article class="product-details">
-        <!--<ul>-->
-          <!--<li>Asortyment: koszula </li>-->
-          <!--<li>Marka: Vistula</li>-->
-          <!--<li>Skład materiału: 100% egipska bawełna</li>-->
-          <!--<li>Sylwetka: super slim</li>-->
-          <!--<li>Rękaw: długi</li>-->
-          <!--<li>Mankiet: zapinany na guzik</li>-->
-          <!--<li>Kołnierz: button-down</li>-->
-        <!--</ul>-->
 
         {{ shirt.details }}
       </article>

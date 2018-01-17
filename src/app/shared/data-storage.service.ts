@@ -20,15 +20,14 @@ export class DataStorageService {
   importBasket() {
       const token = this.authService.getToken();
       const uid = firebase.auth().currentUser.uid;
-      this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/basket/' + uid + '/name.json',
+      this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/basket/' + uid + '.json',
         {params: new HttpParams().set('auth', token)})
         .subscribe(
         (shirts: any) => {
-            console.log(shirts);
+            this.userPanel.setBasket(shirts);
         }
       );
   }
-
   saveBasket(products: Shirt[], name: string) {
     if (this.authService.isAuth()) {
       const token = this.authService.getToken();
@@ -59,11 +58,11 @@ export class DataStorageService {
   }
 
   importShirts() {
-    // this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/shirts.json')
-    //   .subscribe(
-    //     (shirts: Shirt[]) => {
-    //       this.shirtsService.setShirts(shirts);
-    //     }
-    //   );
+    this.httpClient.get<Shirt[]>('https://online-shop-815e7.firebaseio.com/shirts.json')
+      .subscribe(
+        (shirts: Shirt[]) => {
+          this.shirtsService.setShirts(shirts);
+        }
+      );
   }
 }

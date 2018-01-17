@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Shirt} from '../shirt.model';
 import {ShirtsService} from '../shirts.service';
@@ -14,12 +14,14 @@ export class DetailComponent implements OnInit {
   shirt: Shirt;
   id: number;
   feature = 'about';
+  @ViewChild('selectSize') size;
+  sizeOfShirt;
+
   constructor(private route: ActivatedRoute,
               private shirtsService: ShirtsService,
               private userPanelService: UserPanelService,
               private router: Router,
               private dataStorage: DataStorageService) {
-    this.dataStorage.importShirts();
   }
 
   ngOnInit() {
@@ -33,12 +35,15 @@ export class DetailComponent implements OnInit {
   }
 
   toBasket() {
-    this.userPanelService.toBasket(this.shirt);
-    // this.router.navigate(['/user-panel/basket']);
+    this.sizeOfShirt = this.size.nativeElement.value;
+    if (this.sizeOfShirt !== 'choose') {
+      this.userPanelService.toBasket(this.shirt, this.sizeOfShirt);
+    } else {
+      alert('Wybierz rozmiar produktu!');
+    }
   }
 
   goToBasket() {
-    // this.dataStorage.importBasket();
     this.router.navigate(['/user-panel/basket']);
   }
 

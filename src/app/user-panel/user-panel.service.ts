@@ -14,14 +14,12 @@ export class UserPanelService {
 
   setBasket(products: Shirt[]) {
     this.products = products;
-    this.shirtChanged.next(this.products.slice());
   }
-
   getBasket() {
     return this.products.slice();
   }
-
-  toBasket(product: Shirt) {
+  toBasket(product: Shirt, size: string) {
+    product.size = size;
     this.products.push(product);
     this.shirtChanged.next(this.products.slice());
   }

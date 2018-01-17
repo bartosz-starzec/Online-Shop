@@ -1,6 +1,7 @@
 .container {
   width: 95%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 h1 {
   display: inline-block;
@@ -15,13 +16,14 @@ h1 {
 }
 
 .content {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  @media screen and (max-width: 1150px) {
-    flex-direction: column;
+  overflow: hidden;
+  @media screen and (max-width: 800px) {
+    justify-content: space-around;
   }
 }

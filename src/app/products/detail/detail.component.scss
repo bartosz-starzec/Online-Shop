@@ -9,7 +9,6 @@
   background-color: #e1dde2;
   @media screen and (max-width: 900px) {
     flex-direction: column;
-    //background-color: #fff;
   }
 }
 
@@ -59,12 +58,25 @@ img {
   }
   .product-info__size {
     .size-label {
-      margin-top: 20px;
-      margin-right: 20px;
+      width: 180px;
+      text-align: left;
+      margin: 20px auto 0;
+      .size-label__header {
+        display: inline-block;
+        margin: 0;
+        @media screen and (max-width: 900px) {
+          width: 180px;
+        }
+      }
     }
     .product-info__size-select {
-      width: 200px;
+      width: 180px;
+
       font-size: 0.8em;
+      @media screen and (max-width: 900px) {
+        display: block;
+        margin: 0 auto;
+      }
     }
   }
 

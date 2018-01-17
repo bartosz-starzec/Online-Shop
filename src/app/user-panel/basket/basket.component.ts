@@ -13,6 +13,8 @@ import {AuthService} from '../../auth/auth.service';
 export class BasketComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   products: Shirt[];
+  basket: Shirt[];
+  price;
   count = 1;
   @ViewChild('amount') amount: ElementRef;
 
@@ -33,16 +35,27 @@ export class BasketComponent implements OnInit, OnDestroy {
     this.products = this.userPanelService.getBasket();
   }
 
-  increaseAmount() {
-    this.count++;
-    this.amount.nativeElement.value = this.count;
+  calcPrice(i: number) {
+    const singlePrice = document.getElementsByClassName('prod__price-base')[i];
+    const finishedPrice = document.getElementsByClassName('prod__price-sum')[i];
+    this.price = this.count * Number(singlePrice.innerHTML);
+    finishedPrice.innerHTML = this.price;
   }
 
-  decreaseAmount() {
+  increaseAmount(i: number) {
+    this.count++;
+    this.calcPrice(i);
+    const lala = document.getElementsByClassName('amount__input');
+    lala[i].setAttribute('value', String(this.count));
+  }
+
+  decreaseAmount(i: number) {
     if (this.count > 1) {
       this.count--;
-      this.amount.nativeElement.value = this.count;
+      const lala = document.getElementsByClassName('amount__input');
+      lala[i].setAttribute('value', String(this.count));
     }
+    this.calcPrice(i);
   }
 
   saveBasket(name: string) {

@@ -33,7 +33,6 @@ h3 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  overflow: hidden;
   .shirt-describtion {
     width: 200px;
     margin: 0 auto;
@@ -43,7 +42,7 @@ h3 {
     position: relative;
     width: 200px;
     &:hover {
-      transform: scale(1.4);
+      transform: scale(1.1);
     }
   }
 }

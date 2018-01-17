@@ -5,35 +5,37 @@
   <section class="sale"><i class="fa fa-info" aria-hidden="true"></i> SALE do -70%</section>
   <section class="saved">
     <p>Zapisane koszyki:</p>
-    <!--<div *ngFor="let bas of saved">{{  }}</div>-->
+    <div *ngFor="let bas of basket">{{ bas }}</div>
   </section>
   <input type="text" class="input__name-of-basket"><button class="btn__save-basket" (click)="saveBasket('name')">Zapisz koszyk</button>
   <section *ngIf="this.products != 0" class="basket">
     <section class="grid-template basket__header">
-      <div class="basket__header__element"></div>
-      <div class="basket__header__element">Produkt:</div>
-      <div class="basket__header__element">Cena z VAT</div>
-      <div class="basket__header__element">Ilość</div>
-      <div class="basket__header__element">Cena razem</div>
+      <div class="header__element"></div>
+      <div class="header__element">Produkt:</div>
+      <div class="header__element">Cena z VAT</div>
+      <div class="header__element">Ilość</div>
+      <div class="header__element">Cena razem</div>
     </section>
-    <section *ngFor="let product of products" class="grid-template basket__product">
-      <div class="basket__product__item basket__product__img">
+    <section *ngFor="let product of products; let i = index" class="grid-template basket__product">
+      <div class="product__item product__img">
         <img [src]="product.imagePath" alt="">
       </div>
-      <div class="basket__product__item basket__product__info">
-        {{ product.name }}
+      <div class="product__item product__info">
+        {{ product.name }}, rozmiar {{ product.size }}
       </div>
-      <div class="basket__product__item basket__product__price--single">
-        <p class="prod__price">{{ product.price }} zł </p>
+      <div class="product__item product__price--single">
+        <p class="prod__price-base">{{ product.price }}</p>zł
       </div>
-      <div class="basket__product__item basket__product__amount">
+      <div class="product__item product__amount">
         <div class="prod__amount">
-          <input #amount class="prod_amount__input" type="text" name="amount" value="1">
-          <i class="fa fa-angle-up prod_amount__incrase" aria-hidden="true" (click)="increaseAmount()"></i>
-          <i class="fa fa-angle-down prod_amount__decrase" aria-hidden="true" (click)="decreaseAmount()"></i>
+          <input #amount class="amount__input" type="number" name="amount" value="1">
+          <i class="fa fa-angle-up amount__incrase" aria-hidden="true" (click)="increaseAmount(i)"></i>
+          <i class="fa fa-angle-down amount__decrase" aria-hidden="true" (click)="decreaseAmount(i)"></i>
         </div>
       </div>
-      <div class="suma" class="basket__product__item basket__product__price--sum">{{ price }}</div>
+      <div class="product__item product__price--sum">
+        <p class="prod__price-sum">{{ product.price }}</p>zł
+      </div>
     </section>
     <section class="basket__total-value">
       <p><i class="fa fa-info" aria-hidden="true"></i> Nie zwlekaj z zakupem, dodanie produktów do koszyka nie oznacza ich rezerwacji</p>

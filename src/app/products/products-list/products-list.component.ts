@@ -17,13 +17,13 @@ export class ProductsListComponent implements OnInit {
               public auth: AuthService) { }
 
   ngOnInit() {
-    this.shirts = this.shirtService.getShirts();
-    // this.dataStorage.importShirts();
+    this.dataStorage.importShirts();
     this.subscription = this.shirtService.shirtsChan.subscribe(
       (shirts: Shirt[]) => {
         this.shirts = shirts;
       }
     );
+    this.shirts = this.shirtService.getShirts();
 
   }
 

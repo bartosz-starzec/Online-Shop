@@ -1,6 +1,7 @@
 a {
   text-decoration: none;
   color: black;
+
 }
 
 h4 {
@@ -13,23 +14,24 @@ p {
   margin: 0;
 }
 
-section {
-  &.shirt {
-    width: 100%;
+.shirt {
+    width: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     padding: 15px 8px;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
-  img {
+img {
     margin: 0 auto;
-    width: 300px;
-  }
-  .shirt-describtion {
-    width: 300px;
+    width: 200px;
+
+}
+.shirt-describtion {
+    width: 200px;
     margin: 0 auto;
     text-align: center;
-
-
-  }
 }
+
