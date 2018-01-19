@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnChanges, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {UserPanelService} from '../user-panel.service';
 import {Shirt} from '../../products/shirt.model';
 import {Subscription} from 'rxjs/Subscription';
@@ -13,14 +13,16 @@ import {AuthService} from '../../auth/auth.service';
 export class BasketComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   products: Shirt[];
-  basket: Shirt[];
-  price;
-  count = 1;
-  @ViewChild('amount') amount: ElementRef;
+  priceOfProducts: number[] = [];
+  amountOfProducts: number[] = [];
+  amount_Input = document.getElementsByClassName('amount__input');
+  valueOfBasket = 0;
 
   constructor(private userPanelService: UserPanelService,
               private dataStorage: DataStorageService,
-              private auth: AuthService) { }
+              private auth: AuthService) {
+  }
+
 
   ngOnInit() {
     // if (this.auth.isAuth()) {
@@ -35,27 +37,39 @@ export class BasketComponent implements OnInit, OnDestroy {
     this.products = this.userPanelService.getBasket();
   }
 
+
+  finalBasket(index) {
+    this.valueOfBasket += this.products[index].price;
+  }
+
   calcPrice(i: number) {
-    const singlePrice = document.getElementsByClassName('prod__price-base')[i];
-    const finishedPrice = document.getElementsByClassName('prod__price-sum')[i];
-    this.price = this.count * Number(singlePrice.innerHTML);
-    finishedPrice.innerHTML = this.price;
+    const singlePrice = document.getElementsByClassName('prod__price-base');
+    const finalPrice = document.getElementsByClassName('prod__price-sum');
+    this.priceOfProducts[i] = this.amountOfProducts[i] * Number(singlePrice[i].innerHTML);
+    finalPrice[i].innerHTML = String(this.priceOfProducts[i]);
   }
-
+  j;
   increaseAmount(i: number) {
-    this.count++;
+    if (!this.amountOfProducts[i]) {
+      this.amountOfProducts[i] = 1;
+    }
+    this.amountOfProducts[i]++;
+    this.amount_Input[i].setAttribute('value', String(this.amountOfProducts[i]));
     this.calcPrice(i);
-    const lala = document.getElementsByClassName('amount__input');
-    lala[i].setAttribute('value', String(this.count));
-  }
 
+    // const cena = document.getElementById('span');
+    // cena.innerHTML = String(this.priceOfProducts);
+  }
   decreaseAmount(i: number) {
-    if (this.count > 1) {
-      this.count--;
-      const lala = document.getElementsByClassName('amount__input');
-      lala[i].setAttribute('value', String(this.count));
+    if (this.amountOfProducts[i] > 1) {
+      this.amountOfProducts[i]--;
+      this.amount_Input[i].setAttribute('value', String(this.amountOfProducts[i]));
     }
     this.calcPrice(i);
+  }
+
+  deleteProduct(i: number) {
+    this.userPanelService.deleteProduct(i);
   }
 
   saveBasket(name: string) {

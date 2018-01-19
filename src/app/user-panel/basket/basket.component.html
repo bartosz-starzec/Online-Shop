@@ -7,7 +7,7 @@
     <p>Zapisane koszyki:</p>
     <div *ngFor="let bas of basket">{{ bas }}</div>
   </section>
-  <input type="text" class="input__name-of-basket"><button class="btn__save-basket" (click)="saveBasket('name')">Zapisz koszyk</button>
+  <input type="text" class="input__name-of-basket"><button class="btn btn__save-basket" (click)="saveBasket('name')">Zapisz koszyk</button>
   <section *ngIf="this.products != 0" class="basket">
     <section class="grid-template basket__header">
       <div class="header__element"></div>
@@ -24,7 +24,7 @@
         {{ product.name }}, rozmiar {{ product.size }}
       </div>
       <div class="product__item product__price--single">
-        <p class="prod__price-base">{{ product.price }}</p>zł
+        <p class="prod__price-base">{{ product.price }}</p> zł
       </div>
       <div class="product__item product__amount">
         <div class="prod__amount">
@@ -34,12 +34,15 @@
         </div>
       </div>
       <div class="product__item product__price--sum">
-        <p class="prod__price-sum">{{ product.price }}</p>zł
+        <p class="prod__price-sum">{{ product.price }}</p> zł
+      </div>
+      <div class="product__item product__delete">
+        <button class="btn" (click)="deleteProduct(i)">&#9747;</button>
       </div>
     </section>
     <section class="basket__total-value">
       <p><i class="fa fa-info" aria-hidden="true"></i> Nie zwlekaj z zakupem, dodanie produktów do koszyka nie oznacza ich rezerwacji</p>
-      <p>Suma koszyka: </p>
+      <!--<p>Suma koszyka: <span id="span"> {{ product.price }} </span></p>-->
     </section>
   </section>
 

@@ -24,6 +24,11 @@ export class UserPanelService {
     this.shirtChanged.next(this.products.slice());
   }
 
+  deleteProduct(i: number) {
+    this.products.splice(i, 1);
+    this.shirtChanged.next(this.products.slice());
+  }
+
 
 
 

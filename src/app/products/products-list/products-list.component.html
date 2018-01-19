@@ -1,7 +1,7 @@
 <div class="container">
   <h1>NewFashion</h1>
   <section class="header">
-    <h3>Koszule męskie</h3>
+    <a routerLink="/products/mens-shirts"><h3>Koszule męskie</h3></a>
     <button *ngIf="this.auth.isAuth()" (click)="saveShirt()">Save</button>
   </section>
   <section class="mens-shirts">
@@ -13,9 +13,9 @@
             <h4>
               {{ shirt.name }}
             </h4>
-            <p>
+            <span>
               {{ shirt.price }} zł
-            </p>
+            </span>
           </div>
         </section>
       </a>

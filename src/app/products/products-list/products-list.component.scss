@@ -11,11 +11,13 @@ a {
 
 h1 {
   text-align: center;
+  color: #e18962;
 }
 
 h3 {
   display: inline-block;
   margin-left: 20px;
+  font-size: 1.5em;
   &:after {
     content: '';
     display: block;
@@ -23,6 +25,9 @@ h3 {
     height: 2px;
     background-color: #dc8963;
     margin: 5px auto 0;
+  }
+  &:hover {
+    color: #4b4b4b;
   }
 }
 
@@ -38,9 +43,15 @@ h3 {
     margin: 0 auto;
     text-align: center;
   }
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
   a {
     position: relative;
     width: 200px;
+    margin-bottom: 30px;
+    transition: all .5s ease;
     &:hover {
       transform: scale(1.1);
     }

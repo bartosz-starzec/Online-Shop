@@ -26,6 +26,15 @@
 .input__name-of-basket {
   padding: 5px;
 }
+
+.btn {
+  border: none;
+  transition: all .2s ease;
+  background-color: transparent;
+  &:hover {
+    cursor: pointer;
+  }
+}
 .btn__save-basket {
   width: 180px;
   height: 40px;
@@ -33,17 +42,14 @@
   background-color: #000;
   color: #ffffff;
   display: block;
-  border: none;
-  transition: all .2s ease;
   &:hover {
-    cursor: pointer;
     background-color: #353737;
   }
 }
 .basket {
   .grid-template {
     display: grid;
-    grid-template-columns: 15% 40% 15% 15% 15%;
+    grid-template-columns: 15% 40% 15% 10% 15% 5%;
     @media screen and (max-width: 635px){
       display: none;
     }
@@ -59,14 +65,14 @@
     @media screen and (max-width: 635px){
       display: flex;
       justify-content: space-around;
-      flex-wrap: wrap;
       flex-direction: row;
     }
     .product__item {
       line-height: 20px;
       align-self: center;
       @media screen and (max-width: 635px){
-        margin: 40px auto;
+        //padding: 0 5px;
+        margin: 40px 5px;
       }
 
     }
@@ -84,21 +90,21 @@
     .product__info {
       width: 300px;
       @media screen and (max-width: 635px){
-        width: 100px;
+        width: 70px;
       }
     }
     .product__amount {
       .prod__amount {
         position: relative;
-        width: 53px;
+        width: 40px;
         .amount__input {
-          width: 40px;
+          width: 30px;
           padding: 5px;
         }
         .amount__incrase, .amount__decrase {
           cursor: pointer;
           position: absolute;
-          right: 3px;
+          right: 4%;
         }
         .amount__incrase {
           top: 5%;

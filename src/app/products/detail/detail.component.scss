@@ -98,6 +98,9 @@ img {
       margin-right: auto;
       display: block;
     }
+    .fa-shopping-cart {
+      margin-right: 10px;
+    }
   }
   .product-info__btn--describtion {
     display: inline-block;
@@ -107,6 +110,9 @@ img {
     margin-bottom: 30px;
     text-decoration: none;
     cursor: pointer;
+    &:hover {
+      color: #464347;
+    }
   }
 }
 
