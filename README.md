@@ -1,7 +1,5 @@
 <h1> Online shop </h1>
 
-(Stil in progress)
-
 Proejct created with:
 
 - Angular 4
